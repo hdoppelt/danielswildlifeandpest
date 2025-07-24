@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,23 +10,37 @@ body {
     background: white;
 }
 
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header {
     background: white;
 }
 
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    background: #106300;
-    padding: 16px;
+main {
+    flex: 1;
 }
 
-.main-nav a {
-    text-decoration: none;
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #106300;
+    padding: 16px 32px;
+}
+
+.main-nav a,
+.call-us {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
     color: black;
-    font-weight: bold;
-    font-size: 24px
+    text-decoration: none;
 }
 
 .main-nav a.active {
@@ -31,9 +50,22 @@ header {
 .main-nav a:hover {
     color: white;
     background-color: #0c4e00;
-    border-radius: 6px;
-    padding: 8px 12px;
-    transition: background-color 0.2s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.call-us:hover {
+    background-color: #0c4e00;
+    color: white;
+    text-decoration: none;
+}
+
+.phone-icon {
+    height: 20px;
+    margin-right: 8px;
 }
 
 .banner {
@@ -85,6 +117,27 @@ header {
     border: 1px solid #ddd;
 }
 
+.main-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.main-text li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+
+.main-text li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #106300;
+    font-weight: bold;
+}
+
 .services-list {
     width: 25%;
     border-right: 1px solid #ddd;
@@ -97,9 +150,15 @@ header {
 }
 
 .services-list li {
-    margin-bottom: 1rem;
-    font-weight: bold;
-    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.services-list li.selected {
+    background-color: #106300;
+    color: white;
 }
 
 .services-details {
@@ -113,4 +172,30 @@ header {
     max-width: 1200px;
     margin: auto;
     gap: 2rem;
+}
+
+.site-footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 20px 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo {
+    height: 40px;
+}
+
+.service-section {
+    display: none;
+}
+
+.service-section.active {
+    display: block;
 }
