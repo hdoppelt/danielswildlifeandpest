@@ -25,7 +25,15 @@ header {
 }
 
 .main-nav a.active {
-  color: white;
+    color: white;
+}
+
+.main-nav a:hover {
+    color: white;
+    background-color: #0c4e00;
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: background-color 0.2s ease;
 }
 
 .banner {
